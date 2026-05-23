@@ -4,7 +4,7 @@ int main()
 {
     char estado1, estado2, codigo1[2], codigo2[2], cidade1[50], cidade2[50];
     int populacao1, populacao2, pontosTuristicos1, pontosTuristicos2;
-    float area1, area2, pib1, pib2;
+    float area1, area2, pib1, pib2, densidade1, densidade2, pibPerCapta1, pibPerCapta2;
 
     // Carta 1:
 
@@ -56,9 +56,16 @@ int main()
 
     printf("RESULTADO: \n");
 
-    printf("\nCarta 1: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i\n", estado1, codigo1, cidade1, populacao1, area1, pib1, pontosTuristicos1);
+    densidade1 = populacao1 / area1;
+    pibPerCapta1 = pib1 / populacao1;
+
+    densidade2 = populacao2 / area2;
+    pibPerCapta2 = pib2 / populacao2;
+
+
+    printf("Carta 1: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i, \nDensidade populacional: %f, \nPIB per capta: %f \n", estado1, codigo1, cidade1, populacao1, area1, pib1, pontosTuristicos1, densidade1, pibPerCapta1);
     
-    printf("\nCarta 2: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i\n", estado2, codigo2, cidade2, populacao2, area2, pib2, pontosTuristicos2);
+    printf("Carta 2: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i, \nDensidade populacional: %f, \nPIB per capta: %f \n", estado2, codigo2, cidade2, populacao2, area2, pib2, pontosTuristicos2, densidade2, pibPerCapta2);
 
     return 0;
 }
