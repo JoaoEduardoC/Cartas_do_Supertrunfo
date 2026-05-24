@@ -52,10 +52,57 @@ int main() {
     printf("Carta 1: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i, \nDensidade populacional: %f, \nPIB per capta: %f \n", estado1, codigo1, cidade1, populacao1, area1, pib1, pontosTuristicos1, densidade1, pibPerCapta1);
     printf("Carta 2: \nEstado: %c, \nCódigo: %s, \nCidade: %s, \nPopulação: %i, \nÁrea: %f, \nPIB: %f, \nNumero de pontos turísticos: %i, \nDensidade populacional: %f, \nPIB per capta: %f \n", estado2, codigo2, cidade2, populacao2, area2, pib2, pontosTuristicos2, densidade2, pibPerCapta2);
 
-    if (pibPerCapta1 > pibPerCapta2) {
-        printf("Carta 1 venceu! O PIB per capta de %s (Carta 1) é maior que o PIB per capta de %s (Carta 2)", cidade1, cidade2);
-    } else {
-        printf("Carta 2 venceu ! O PIB per capta de %s (Carta 2) é maior que o PIB per capta de %s (Carta 1)", cidade2, cidade1);
+    int escolhaJogador;
+
+    printf("\nEscolha qual atributo comparar:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de pontos turísticos\n");
+    printf("5. Densidade demográfica\n");
+    scanf("%d", &escolhaJogador);
+
+    switch (escolhaJogador)
+    {
+    case 1:
+        if (populacao1 > populacao2) {
+            printf("Carta1 venceu!\n");
+        } else {
+            printf("Carta2 venceu!\n");
+        }
+        break;
+    case 2:
+        if (area1 > area2) {
+            printf("Carta1 venceu!\n");
+        } else {
+            printf("Carta2 venceu!\n");
+        }
+        break;
+    case 3:
+        if (pib1 > pib2) {
+            printf("Carta1 venceu!\n");
+        } else {
+            printf("Carta2 venceu!\n");
+        }
+        break;
+    case 4:
+        if (pontosTuristicos1 > pontosTuristicos2) {
+            printf("Carta1 venceu!\n");
+        } else {
+            printf("Carta2 venceu!\n");
+        }
+        break;
+    case 5:
+        if (densidade1 > densidade2) {
+            printf("Carta1 venceu!\n");
+        } else {
+            printf("Carta2 venceu!\n");
+        }
+        break;
+    default:
+        printf("Opção invalida!\n");
+        break;
     }
+
     return 0;
 }
